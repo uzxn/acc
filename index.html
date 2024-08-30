@@ -11,7 +11,7 @@
 </head>
 
 <body class="c">
-  <b><i>单曲 ACC 计算器</i></b>
+  <i><b>单曲 ACC 计算器</b>&ensp;<small>2024.08.30 更新</small></i>
   <hr>
   <p>请选择段位：</p>
   <div>
@@ -65,7 +65,10 @@
     <label><input type="radio" name="dan" value="m3_e9">Ex-9</label>
     <label><input type="radio" name="dan" value="m3_ef">Ex-Final</label>
     <br>
-    <b>Reform (DDM):</b>
+    <b>Reform v1 (DDMythical):</b>
+    <label><input type="radio" name="dan" value="rf_i1">Intro 1dan</label>
+    <label><input type="radio" name="dan" value="rf_i2">Intro 2dan</label>
+    <label><input type="radio" name="dan" value="rf_i3">Intro 3dan</label><br>
     <label><input type="radio" name="dan" value="rf_1">1dan</label>
     <label><input type="radio" name="dan" value="rf_2">2dan</label>
     <label><input type="radio" name="dan" value="rf_3">3dan</label>
@@ -82,11 +85,11 @@
     <label><input type="radio" name="dan" value="rf_d">Delta(&delta;)</label>
     <label><input type="radio" name="dan" value="rf_e">Epsilon(&epsilon;)</label>
     <br>
-    <button class="btn primary" onclick="showInput()">确定</button>
+    <button class="btn primary" onclick="showInput()">确定并开始输入 ACC</button>
   </div>
   <div id="info"></div>
   <div id="input"></div>
-  <textarea id="result" readonly class="card w-100" rows="2" style="resize:none" placeholder="我是结果框"></textarea>
+  <textarea id="result" readonly class="card w-100" rows="3" style="resize:none" placeholder="我是结果框"></textarea>
 </body>
 
 </html>

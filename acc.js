@@ -25,7 +25,7 @@ data["m2_e7"] = { num: 4, song: ["梅里 - Paranoia (Cut) (1.25x) [MintApril_]",
 data["m2_e8"] = { num: 4, song: ["Royal Hunt - Martial Arts (1.4x) [XingRen]", "Camellia - Gene Disruption (1.1x) [teradora]", "15 - paradigm shift [D-CSC] (1.15x) [AkagiPh]", "mabinogi - Death Melody (Cut) (1.25x) [XingRen]"], note: [1929, 2380, 2710, 4675] };
 data["m2_e9_v175"] = { num: 4, song: ["Ryu* Feat. 森永真由美 - Din Don Dan (BPM*1.3) [XingRen]", "Silentroom - 驟雨の狹間 (BPM*1.15) [teradora vs. Karuta]", "▼8Ы$Ŧ∆8Ќ∆_ ĜР∑χØ฿▼ - $ØRRY (BPM*1.4) [teradora]", "Silvia - VERTEX GAMMA [XingRen vs. teradora]"], note: [4427, 3660, 4323, 3044] };
 data["m2_e9"] = { num: 4, song: ["Luze - Fragmentation (1.05x) [teradora]", "Octopodes remixed DSZ - Nostos2021 (1.05x) [XingRen]", "Dark PHOEiNX - Green-eyed Jealousy (Cut) [teradora]", "Falcom Sound Team jdk - SILENT DESERT (Cut) (BPM*1.2) [teradora vs. XingRen]"], note: [3987, 1874, 4363, 3843] };
-data["m2_ef"] = { num: 4, song: ["fripside - Only my railgun (BPM*1.33) [XingRen]", "Incinerate - -purgatorium- (BPM*1.14) [tera vs. Cyrillic]", "xi - Blue Zenith (BPM*1.15) [MintApril_]", "Yoko Kanno - Inner Universe (BPM*1.45) [tera]"], note: [3468, 3335, 3698, 5061] };
+data["m2_ef"] = { num: 4, song: ["fripside - Only my railgun (BPM*1.33) [XingRen]", "Incinerate - -purgatorium- (BPM*1.14) [tera vs. Cyrillic]", "xi - Blue Zenith (BPM*1.15) [MintApril]", "Yoko Kanno - Inner Universe (BPM*1.45) [tera]"], note: [3468, 3335, 3698, 5061] };
 // Malody v3
 data["m3_0"] = { num: 4, song: ["生きとし生けるもの (Ikitoshi Ikerumono) // Promiii", "Rambling Pleat // boomushroom", "一梦千霄 (Yi Meng Qian Xiao) // DongShaoZhou", "White Eternity // tkdkendo"], note: [492, 529, 595, 681] };
 data["m3_1"] = { num: 4, song: ["尘世闲游 (Rex Incognito) // YuzukiY", "恋せよ乙女！ (Koiseyo Otome!) // tkdkendo", "Break // XingRen", "KING // DongShaoZhou"], note: [695, 621, 718, 1279] };
@@ -70,7 +70,7 @@ function showInput() {
   let input = "请输入：<br>";
   for (let j = 1; j <= data[choice].num; j++)
     input += `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌结束时的 ACC">\n`;
-  input += `<br><button class="btn primary" onclick="calc()">确定</button>`;
+  input += `<br><button class="btn primary" onclick="calc()">确定并复制结果到剪贴板</button>`;
   document.getElementById("info").innerHTML = info;
   document.getElementById("input").innerHTML = input;
   document.getElementById("result").innerHTML = "";
@@ -80,13 +80,16 @@ function calc() {
   let choice = getRadio(), noteNum = data[choice].note;
   let preNoteNum = [0]; // 物量的前缀和
   for (let i = 0; i < data[choice].num; i++) preNoteNum[i + 1] = preNoteNum[i] + noteNum[i];
-  let inputAcc = [0]; // inputAcc[1] 为第1首歌结束时的ACC
+  let inputAcc = [0]; // inputAcc[1] 为第 1 首歌结束时的ACC
   for (let i = 1; i <= data[choice].num; i++)
-    inputAcc[i] = Number(document.getElementById(`input_${i}`).value);
-  let result = "单曲";
+    inputAcc[i] = Number(document.getElementById(`input_${i}`).value).toFixed(3);
+  let result = `${inputAcc[1]}`;
+  for (let i = 2; i <= data[choice].num; i++) result += `-${inputAcc[i]}`;
+  result += '\n单曲';
   for (let i = 1; i <= data[choice].num; i++) {
     let acc = (inputAcc[i] * preNoteNum[i] - inputAcc[i - 1] * preNoteNum[i - 1]) / noteNum[i - 1];
-    result += ` ${acc.toFixed(4)}%`;
+    result += ` ${acc.toFixed(3)}`;
   }
   document.getElementById("result").innerHTML = result;
+  navigator.clipboard.writeText(result);
 }
