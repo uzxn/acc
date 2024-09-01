@@ -1,11 +1,11 @@
 # acc
 
-The accuracy calculator for many MUG dans.
+The accuracy calculator for many MUG dans. Support custom dan.
 
 ## Supported Dans
 
 - 4K
   - Malody v3, and v2
-  - Reform Dan v1 (DDMythical)
+  - Reform v1 (DDMythical)
 
-More dans will be supported soon!
+More dans will be added soon!

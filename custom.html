@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.cn/css?family=Nunito:,i,b">
+  <link rel="stylesheet" href="./lit.css">
+  <title>自定义 ACC 计算器</title>
+  <script>
+    let data = { num: 4, note: [0, 0, 0, 0] };
+    function inputData() {
+      let num = Number(document.getElementById("num").value);
+      if (num < 1) {
+        document.getElementById("data").innerHTML = "";
+        document.getElementById("input").innerHTML = "";
+        document.getElementById("result").innerHTML = "你输了个什么！( `д´)";
+        return;
+      }
+      data.num = num;
+      let input = "请输入：<br>";
+      for (let i = 1; i <= num; i++)
+        input += `<input class="card" type="text" id="note_${i}" placeholder="第 ${i} 首歌的物件数">\n`;
+      input += `<br><button class="btn primary" onclick="showInput()">确定并输入 ACC</button>`;
+      document.getElementById("data").innerHTML = input;
+      document.getElementById("input").innerHTML = "";
+      document.getElementById("result").innerHTML = "";
+    }
+    function showInput() {
+      for (let i = 0; i < data.num; i++)
+        data.note[i] = Number(document.getElementById(`note_${i + 1}`).value);
+      let input = "请输入（无需百分号）：<br>";
+      for (let i = 1; i <= data.num; i++)
+        input += `<input class="card" type="text" id="input_${i}" placeholder="第 ${i} 首歌结束时的 ACC">\n`;
+      input += `<br><button class="btn primary" onclick="calc()">确定并复制结果到剪贴板</button>`;
+      document.getElementById("input").innerHTML = input;
+      document.getElementById("result").innerHTML = "";
+    }
+    function calc() {
+      let noteNum = data.note;
+      let preNoteNum = [0]; // 物量的前缀和
+      for (let i = 0; i < data.num; i++) preNoteNum[i + 1] = preNoteNum[i] + noteNum[i];
+      let inputAcc = [0]; // inputAcc[1] 为第 1 首歌结束时的ACC
+      for (let i = 1; i <= data.num; i++)
+        inputAcc[i] = Number(document.getElementById(`input_${i}`).value).toFixed(3);
+      let result = `${inputAcc[1]}`;
+      for (let i = 2; i <= data.num; i++) result += `-${inputAcc[i]}`;
+      result += '\n单曲';
+      for (let i = 1; i <= data.num; i++) {
+        let acc = (inputAcc[i] * preNoteNum[i] - inputAcc[i - 1] * preNoteNum[i - 1]) / noteNum[i - 1];
+        result += ` ${acc.toFixed(3)}`;
+      }
+      document.getElementById("result").innerHTML = result;
+      navigator.clipboard.writeText(result);
+    }
+  </script>
+</head>
+
+<body class="c">
+  <i><b>自定义 ACC 计算器</b>&ensp;<small>2024.09.01 更新</small></i>
+  <hr>
+  <div>段位有多少首歌？<input class="card 1 col" type="number" id="num" min=1 value=4 placeholder="歌曲数量">
+    <button class="btn primary" onclick="inputData()">确定</button>
+  </div>
+  <div id="data"></div>
+  <div id="input"></div>
+  <textarea id="result" readonly class="card w-100" rows="3" style="resize:none" placeholder="我是结果框 (`ε´ )"></textarea>
+</body>
+
+</html>

@@ -48,6 +48,22 @@ data["m3_e7"] = { num: 4, song: ["LiFE Garden (1.05x) // YuzakiNASB", "Alpha // 
 data["m3_e8"] = { num: 4, song: ["はやぶさ (Hayabusa) // Hylotl", "驟雨の狹間 (Shuu no Hazama) // tera", "アマツカミ (Amatsukami) (1.15x) // Hinaka_Yuki", "CRIMSON FIGHTER (1.15x) // OxalicAcid"], note: [3789, 3663, 2424, 3255] };
 data["m3_e9"] = { num: 4, song: ["crazy_tek (DJ Noriken Remix) // tera", "Nhelv // tera", "終点 // Hinaka_Yuki", "Deadly force - Put an end // Sorakaru_ vs. Hinaka_Yuki"], note: [3888, 3030, 3581, 3700] };
 data["m3_ef"] = { num: 4, song: ["Infinity Heaven // tera", "NEURO-CLOUD-9 // tera", "キズアト (Kizuato) (1.3x) // tera", "Runengon // tera"], note: [2828, 3362, 3393, 5100] };
+// Reform v1 (DDMythical)
+data["rf_1"] = { num: 4, song: ["ULTRA-PRISM - Miracle Chance (Golgo13/Sensationer) [SMOC 8TH] DD EDIT", "marshmello - WaNt U 2 (erlinadewi-) [HYPER]", "Porter Robinson & Madeon - Shelter (Dellvangel) [Loneliness]", "t+pazolite - Tommorow Perfume (tpz Despair Mix) (Critical_Star) [ADVANCED Lv. 9]"], note: [878, 696, 954, 1167] };
+data["rf_2"] = { num: 4, song: ["Dollscythe - Flashes (ZZHBOY) [CS’ Hyper]", "Remo-con - Vermillion (HOBIT) [SMOC 8TH] DD EDIT", "Yooh - Snow Storm -euphoria- (raediaufar) [ADVANCED] DD EDIT", "Colorful Sounds Port - Eternal Drain (Wh1teh) [Hyper]"], note: [1107, 905, 955, 1487] };
+data["rf_3"] = { num: 4, song: ["9nine - Cross Over (Golgo13/Sensationer) [SMOC 8TH]", "The Flashbulb - Kirlian Shores (James May) [James May 1] {cut}", "Rche - Entelecheia (Starry-) [Hyper]", "SHIKI - Endless Dream (hi19hi19) [hi19hi19 Pack 3 - Popcorn Blast JS Buttery Snack Filez]"], note: [1008, 797, 1047, 1259] };
+data["rf_4"] = { num: 4, song: ["Andrew W.K - It's Time To Party!! (IcyWorld) [Rebound Dump Collection Megapack]", "hyi - Ephemera (rCaliberGX/Fullerene-) [Yolomania 3]", "w_tre - Shannon’s Theorem (hi19hi19) [hi19hi19 4 - Modern Keyboardsmash]", "Alex c. feat. Yasmin K. - Angel of Darkness (Leo137) [Yolomania 3]"], note: [905, 1499, 1283, 2071] };
+data["rf_5"] = { num: 4, song: ["r300k - Energy Flower 3007 (Shoegazer) [6236]", "The Ghost Of 3.13 - Last Star in the Universe (Wiosna) [Yolomania 3]", "DJ'TEKINA//SOMETHING - Palette GAMMA (Cadmium-113) [Abstract]", "DJ Noriken - Elektric U-Phoria (IcyWorld) [Yolomania 4]"], note: [1293, 1722, 1632, 1903] };
+data["rf_6"] = { num: 4, song: ["Dekatora - Sweet & Sweet Cherry X (Golgo13/Sensationer) [SMOC 8TH]", "Terminal11 - The Bird’s Midair Heatstroke (samurai7654) [Rebound Dump Collection Megapack I] {cut}", "t+pazolite - Luv * Lab * Poison 22ate! (CBR x Choof) [Nuclear Blast 5] {cut}", "Musical Masterpiece - M-A (IcyWorld) [Nuclear Blast 4]"], note: [1487, 1266, 1378, 2186] };
+data["rf_7"] = { num: 4, song: ["Last Chance (Golgo13/Sensationer) [SMOC 8TH]", "Niki - WAVE (Skwid) [Dump Parade]", "Cardboard Box vs. STereochan - We eat at FIVE FIVE FIVE GUYS (hi19hi19) [hi19hi19 3 - Popcorn Blast]", "Tina Cousins - Hymn (Leo137) [Yolomania 3]"], note: [2114, 1777, 1081, 2734] };
+data["rf_8"] = { num: 4, song: ["C-Clays - To The Limit (Wh1teh) [Fennec Fantasy] {1.1x // cut}", "Terminal11 - Reluctantly Accepting Temporary Overexhaustion (ceteka) [HSMP6]", "Yu_Ashina - Trickstarz {1.15x} (hi19hi19) [hi19hi19 5 - Streams and Memes]", "DJ Myosuke - Anguish (Shoegazer) [Cherry Blossoms and Broken Streams] {cut}"], note: [2177, 1309, 1608, 1589] };
+data["rf_9"] = { num: 4, song: ["Jessica Jay - Can’t take my eyes off you (Golgo13/Sensationer) [SMOC 8TH]", "Igorrr - Cicadidae (Minty) [Minty Fresh Pack 1]", "DJ Banzai - Disconnected Trance (Gammablaster) [HSMP12]", "ueotan - Firmament Castle “Velier” (hi19hi19) [hi19hi19 3 - Popcorn Blast] {1.05x}"], note: [2114, 2070, 1674, 2272] };
+data["rf_10"] = { num: 4, song: ["yst - The Lost Dedicated. (Zyph/Jumpstream Japan) [OLD EASY VERSION]", "DEV/NULL - Rave 7 (hi19hi19) [hi19hi19 2 - Dumps and Hard stuff] {1.1x}", "YMCK - Oh Curry! (kaiten123) [kaiten dumbstream 2] {0.9x // cut // A.K.A. Kare Dayo! v. Dumbstreamz}", "Sia - Chandelier ~aoredit~ (_underjoy) [Yolomania 4]"], note: [1906, 1460, 1723, 2392] };
+data["rf_a"] = { num: 4, song: ["SAMBA MASTER -SATOH- - Dark Sambaland (Seiryuu) [Jack Dumps]", "U2 Akiyama - Odoru Mizushibuki (Shoegazer) [Macabre] {1.1x}", "Jea - Makiba (ilikexd) [Fullerene Shift]", "Vaenus - LazorBeamz (Evening) [CHALLENGE 006]"], note: [2265, 1528, 2300, 3334] };
+data["rf_b"] = { num: 4, song: ["MoriMori Atsushi - Paradigm Shift (Hydria) [MDx2v5]", "Camellia - Blue Planet (Shoegazer) [Terra]", "The Queenstons - Amber Starlight, Don't Fall (IcyWorld) [NBJS5] {cut}", "Jeff Williams - Time To say Goodbye (feat. Casey Lee Williams) (Halogen-) [Farewell] {cut}"], note: [2274, 2308, 1740, 2301] };
+data["rf_g"] = { num: 4, song: ["The Quick Brown Fox - Break (beary605) [Smash] {1.1x}", "Camellia - Fastest Crash (Shoegazer) [Paroxysm] {cut}", "Hige Driver - Reflec Streamz (ATTang) [ATTang’s Dumpmix]", "DJ Sharpnel - We Luv Lama (IcyWorld) [Nuclear Blast 4] {1.2x // cut}"], note: [1973, 1980, 1429, 3979] };
+data["rf_d"] = { num: 4, song: ["CROOVE - Aquaris (snoverpk) [Wanderer] {1.3x}", "Studio EIM - Crescent Moon Island Boss Battle (Shoegazer) [Kuro] {1.05x}", "DETRO - Volcanic (ATTang) [ATTang’s Bad Files]", "DJ Sharpnel - Future Dominators (IcyWorld) [NBJS4] {1.3x // cut}"], note: [2018, 2711, 3268, 2629] };
+data["rf_e"] = { num: 4, song: ["SHIKI - Rose Quartz (EGG) [Singles] {1.3x}", "The Ghost of 3.13 - Forgotten (Shoegazer x Zyph) [Yolomania 2] {1.4x}", "ueotan - Mario Paint (Time Progression for BMS) [D-ANOTHER] {DELAYMASTER}", "plastic feat. Sakito - Hitsugi To Futago (snoverpk) [PHANTASM] {1.25x}"], note: [2128, 2552, 2194, 2829] };
 
 function getRadio() {
   let choices = document.getElementsByName("dan");
@@ -61,13 +77,13 @@ function showInput() {
   if (choice === false || !(choice in data)) {
     document.getElementById("info").innerHTML = "";
     document.getElementById("input").innerHTML = "";
-    document.getElementById("result").innerHTML = "还未选择任何段位！/ 该段位没有数据！作者咕了";
+    document.getElementById("result").innerHTML = "还未选择任何段位！( `д´)9 / 该段位没有数据！作者咕了 (`ε´ )";
     return;
   }
   let info = "曲目信息：<pre>";
   for (let i = 0; i < data[choice].num; i++) info += `\n${data[choice].song[i]}`;
   info += "</pre>";
-  let input = "请输入：<br>";
+  let input = "请输入（无需百分号）：<br>";
   for (let j = 1; j <= data[choice].num; j++)
     input += `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌结束时的 ACC">\n`;
   input += `<br><button class="btn primary" onclick="calc()">确定并复制结果到剪贴板</button>`;
