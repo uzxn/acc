@@ -152,7 +152,7 @@ function calc() {
   }
   let inputAcc = [0]; // inputAcc[1] 为第 1 首歌结束时的ACC
   for (let i = 1; i <= DAN_DATA[choice].num; i++) {
-    inputAcc[i] = Number(document.getElementById(`input_${i}`).value).toFixed(3);
+    inputAcc[i] = Number(document.getElementById(`input_${i}`).value).toFixed(2);
   }
   let result = `${inputAcc[1]}`;
   for (let i = 2; i <= DAN_DATA[choice].num; i++) {
