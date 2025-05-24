@@ -99,7 +99,7 @@ const DAN_DATA = {
   "4ln2_15": { num: 4, note: [3216, 3209, 3278, 3149], lnote: [2937, 2452, 2626, 2814], song: ["Himeringo - Kodoku no Kakurenbo (eZmmR/upan) [FINAL DESPAIR 1.15 (Yume remap&cut)]", "Kairiki Bear - Inaiinai isonshou (feat. GUMI, Kagamine Rin) (juankristal) [timing hell [NSV] 1.25 (Yume edit)]", "DJKurara - White Hair Little Swords Girl (_underjoy) [Youmu's Dream 1.025]", "Camellia - NUCLEAR-STAR ([Crz]Crysarlene) [Polaris(Yume edit)]"] },
 };
 
-function getRadio() {
+function getDanChoice() {
   let choices = document.getElementsByName("dan");
   for (let i = 0; i < choices.length; i++) {
     if (choices[i].checked == true) {
@@ -109,22 +109,40 @@ function getRadio() {
   return false;
 }
 
+function getFunctionChoice() {
+  let choices = document.getElementsByName("function");
+  for (let i = 0; i < choices.length; i++) {
+    if (choices[i].checked == true) {
+      return choices[i].value;
+    }
+  }
+  return false;
+}
+
+function isSV2() {
+  return document.getElementsByName("sv2")[0].checked;
+}
+
 function showInput() {
-  let choice = getRadio();
-  if (choice === false || !(choice in DAN_DATA)) {
+  let danChoice = getDanChoice(), functionChoice = getFunctionChoice();
+  if (danChoice === false || !(danChoice in DAN_DATA)) {
     document.getElementById("info").innerHTML = "";
     document.getElementById("input").innerHTML = "";
     document.getElementById("result").innerHTML = "还未选择任何段位！( `д´)9 / 该段位没有数据！作者咕了 (`ε´ )";
     return;
   }
   let info = "曲目信息：<br><pre>";
-  for (let i = 0; i < DAN_DATA[choice].num; i++) {
-    info += `\n${DAN_DATA[choice].song[i]}`;
+  for (let i = 0; i < DAN_DATA[danChoice].num; i++) {
+    info += `\n${DAN_DATA[danChoice].song[i]}`;
   }
   info += "</pre>";
   let input = "请输入（无需百分号）：<br>";
-  for (let j = 1; j <= DAN_DATA[choice].num; j++) {
-    input += `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌结束时的 ACC">\n`;
+  for (let j = 1; j <= DAN_DATA[danChoice].num; j++) {
+    if (functionChoice == "normal") {
+      input += `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌结束时的 ACC">\n`;
+    } else {
+      input += `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌的单曲 ACC">\n`;
+    }
   }
   input += `<br><button class="btn primary" onclick="calc()">确定并复制结果到剪贴板</button>`;
   document.getElementById("info").innerHTML = info;
@@ -132,40 +150,57 @@ function showInput() {
   document.getElementById("result").innerHTML = "";
 }
 
-function isSV2() {
-  return document.getElementsByName("sv2")[0].checked;
-}
-
 function calc() {
-  let choice = getRadio(), noteNum = [0], preNoteNum = [0]; // 物量的前缀和
-  for (let i = 0; i < DAN_DATA[choice].num; i++) {
-    noteNum[i] = DAN_DATA[choice].note[i];
+  let danChoice = getDanChoice(), functionChoice = getFunctionChoice(), noteNum = [0], preNoteNum = [0]; // 物量的前缀和
+  for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
+    noteNum[i] = DAN_DATA[danChoice].note[i - 1];
   }
   // 如果数据中有 LN 物量并且选中 Score v2
-  if ("lnote" in DAN_DATA[choice] && isSV2()) {
-    for (let i = 0; i < DAN_DATA[choice].num; i++) {
-      noteNum[i] += DAN_DATA[choice].lnote[i];
+  if ("lnote" in DAN_DATA[danChoice] && isSV2()) {
+    for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
+      noteNum[i] += DAN_DATA[danChoice].lnote[i - 1];
     }
   }
-  for (let i = 0; i < DAN_DATA[choice].num; i++) {
-    preNoteNum[i + 1] = preNoteNum[i] + noteNum[i];
+  for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
+    preNoteNum[i] = preNoteNum[i - 1] + noteNum[i];
   }
-  let inputAcc = [0]; // inputAcc[1] 为第 1 首歌结束时的ACC
-  for (let i = 1; i <= DAN_DATA[choice].num; i++) {
+  let inputAcc = [0];
+  for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
     inputAcc[i] = Number(document.getElementById(`input_${i}`).value).toFixed(2);
   }
-  let result = `${inputAcc[1]}`;
-  for (let i = 2; i <= DAN_DATA[choice].num; i++) {
-    result += `-${inputAcc[i]}`;
-  }
-  // 如果数据中有 LN 物量并且选中 Score v2
-  if ("lnote" in DAN_DATA[choice] && isSV2()) {
-    result += ' (Score v2)';
-  }
-  result += '\n单曲';
-  for (let i = 1; i <= DAN_DATA[choice].num; i++) {
-    let acc = (inputAcc[i] * preNoteNum[i] - inputAcc[i - 1] * preNoteNum[i - 1]) / noteNum[i - 1];
-    result += ` ${acc.toFixed(3)}`;
+  let result = "(none)";
+  if (functionChoice == "normal") { // 由段位 ACC 变化计算单曲 ACC
+    result = `${inputAcc[1]}`;
+    for (let i = 2; i <= DAN_DATA[danChoice].num; i++) {
+      result += `-${inputAcc[i]}`;
+    }
+    // 如果数据中有 LN 物量并且选中 Score v2
+    if ("lnote" in DAN_DATA[danChoice] && isSV2()) {
+      result += ' (Score v2)';
+    }
+    result += '\n单曲';
+    for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
+      let acc = (inputAcc[i] * preNoteNum[i] - inputAcc[i - 1] * preNoteNum[i - 1]) / noteNum[i];
+      result += ` ${acc.toFixed(3)}`;
+    }
+  } else { // 由单曲 ACC 推算段位 ACC 变化
+    result = "单曲";
+    for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
+      result += ` ${inputAcc[i]}`;
+    }
+    // 如果数据中有 LN 物量并且选中 Score v2
+    if ("lnote" in DAN_DATA[danChoice] && isSV2()) {
+      result += ' (Score v2)';
+    }
+    result += `\n推算 ${inputAcc[1]}0`;
+    let deduceAcc = [0], sum = 0;
+    for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
+      sum += inputAcc[i] * noteNum[i];
+      deduceAcc[i] = (sum / preNoteNum[i]);
+    }
+    for (let i = 2; i <= DAN_DATA[danChoice].num; i++) {
+      result += `-${deduceAcc[i].toFixed(3)}`;
+    }
   }
   document.getElementById("result").innerHTML = result;
   navigator.clipboard.writeText(result);
