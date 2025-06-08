@@ -7,40 +7,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.cn/css?family=Nunito:,i,b">
   <link rel="stylesheet" href="./lit.css">
   <title>单曲 ACC 计算器</title>
-  <script src="./acc.js"></script>
-  <style>
-    .github-corner:hover .octo-arm {
-      animation: octocat-wave 560ms ease-in-out
-    }
-
-    @keyframes octocat-wave {
-
-      0%,
-      100% {
-        transform: rotate(0)
-      }
-
-      20%,
-      60% {
-        transform: rotate(-25deg)
-      }
-
-      40%,
-      80% {
-        transform: rotate(10deg)
-      }
-    }
-
-    @media (max-width:500px) {
-      .github-corner:hover .octo-arm {
-        animation: none
-      }
-
-      .github-corner .octo-arm {
-        animation: octocat-wave 560ms ease-in-out
-      }
-    }
-  </style>
+  <script defer src="./data.js"></script>
+  <script defer src="./acc.js"></script>
 </head>
 
 <body class="c">
@@ -56,7 +24,7 @@
         fill="currentColor" class="octo-body" />
     </svg>
   </a>
-  <i><b>单曲 ACC 计算器</b>&ensp;<small>2025.05.29 更新</small></i>
+  <i><b>单曲 ACC 计算器</b>&ensp;<small>2025.06.08 更新</small></i>
   <hr>
   <p>请选择计算方式：</p>
   <div>
@@ -146,6 +114,18 @@
       <label><input type="radio" name="dan" value="rf_g">Gamma(&gamma;)</label>
       <label><input type="radio" name="dan" value="rf_d">Delta(&delta;)</label>
       <label><input type="radio" name="dan" value="rf_e">Epsilon(&epsilon;)</label>
+      <label><input type="radio" name="dan" value="rf_z">Zeta(&zeta;)</label>
+    </details>
+    <details>
+      <summary><b>osu!mania 4K Dan ~ REFORM ~ Sample (Emik)</b></summary>
+      <label><input type="radio" name="dan" value="rfsp_ea">EpsilonA(&epsilon;A)</label>
+      <label><input type="radio" name="dan" value="rfsp_eb">EpsilonB(&epsilon;B)</label>
+      <label><input type="radio" name="dan" value="rfsp_z">Zeta(&zeta;)</label>
+    </details>
+    <details>
+      <summary><b>osu!mania 4K Dan ~ REFORM ~ FINAL (Thaumiel)</b></summary>
+      <label><input type="radio" name="dan" value="rff_z">Zeta(&zeta;)</label>
+      <label><input type="radio" name="dan" value="rff_et">Eta(&eta;)</label>
     </details>
     <details>
       <summary><b>osu!mania 4K LN Dan Courses v2</b></summary>
@@ -166,8 +146,24 @@
       <label><input type="radio" name="dan" value="4ln2_14">14dan</label>
       <label><input type="radio" name="dan" value="4ln2_15">15dan</label>
     </details>
-    <button class="btn primary" onclick="showInput()">确定并输入 ACC</button>
+    <details>
+      <summary><b>wds0 Dan</b></summary>
+      <label><input type="radio" name="dan" value="wds0_1">1dan</label>
+      <label><input type="radio" name="dan" value="wds0_2">2dan</label>
+      <label><input type="radio" name="dan" value="wds0_3">3dan</label>
+      <label><input type="radio" name="dan" value="wds0_4">4dan</label>
+      <label><input type="radio" name="dan" value="wds0_5">5dan</label>
+      <label><input type="radio" name="dan" value="wds0_n">NBdan</label>
+      <label><input type="radio" name="dan" value="wds0_6">6dan</label>
+      <label><input type="radio" name="dan" value="wds0_7">7dan</label>
+      <label><input type="radio" name="dan" value="wds0_8">8dan</label>
+      <label><input type="radio" name="dan" value="wds0_9">9dan</label>
+      <label><input type="radio" name="dan" value="wds0_10">10dan</label>
+      <label><input type="radio" name="dan" value="wds0_j">JBdan</label>
+      <label><input type="radio" name="dan" value="wds0_f">Final</label>
+    </details>
   </div>
+  <button class="btn primary" onclick="showInput()">确定并输入 ACC</button>
   <div id="info"></div>
   <div id="input"></div>
   <textarea id="result" readonly class="card w-100" rows="3" style="resize:none;" placeholder="我是结果框 (`ε´ )"></textarea>
