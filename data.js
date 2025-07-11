@@ -106,6 +106,9 @@ const DAN_DATA = {
   "4ln2_14": { num: 4, note: [2319, 2408, 2483, 2158], lnote: [2096, 1912, 1835, 1789], song: ["Kagura - Mare Nectaris ([Crz]Crysarlene) [Fracastorius (Yami buff)]", "Silentroom - Nhelv (LovelySerenade) [Zen (Yami buff) x1.05]", "Hotaru - Indomitable Spirit [Hommarju Remix] (AuraahDono) [[L]u[N]atic (Yami buff) x1.5]", "ABE3 - The lost (_underjoy) [in the dark]"] },
   "4ln2_15": { num: 4, note: [3216, 3209, 3278, 3149], lnote: [2937, 2452, 2626, 2814], song: ["Himeringo - Kodoku no Kakurenbo (eZmmR/upan) [FINAL DESPAIR 1.15 (Yume remap&cut)]", "Kairiki Bear - Inaiinai isonshou (feat. GUMI, Kagamine Rin) (juankristal) [timing hell [NSV] 1.25 (Yume edit)]", "DJKurara - White Hair Little Swords Girl (_underjoy) [Youmu's Dream 1.025]", "Camellia - NUCLEAR-STAR ([Crz]Crysarlene) [Polaris(Yume edit)]"] },
 
+  // Haku Dan (白段)
+  "haku": { num: 4, note: [2379, 3073, 3561, 962], song: ["(Jack) Hommarju vs P*Light - Double Universe [x1.2]", "(Stamina) Ariabl'eyeS - 閃光のフレア (Senkou o furea) [x1.25]", "(Speed) 梶浦由記 - Credens Justitiam [x1.1]", "(Technical) Kobaryo - northern_limit feat. せんざい [x1.1]"] },
+
   // wds0 Dan
   "wds0_1": { num: 4, note: [2100, 2050, 2344, 2236], song: ["Aliesrite* (Ym1024 feat. lamie*) - Vista", "Zeus vs BKANOTHER - Kingdom Of Souls", "Luze vs Kozato - Andro", "ZUN - marchendreams. (BMS edit)"] },
   "wds0_2": { num: 4, note: [2148, 3246, 2054, 2125], song: ["MisomyL - 無機質世界に彩を", "かたぎり - Nyan-Nyan Naughty Night", "U-hey Seta feat. madoka＊ & kei_iwata - Aoharu Memorysweeper", "96 & Asaki - お米の美味しい炊き方、そしてお米を食べることによるその効 果"] },
