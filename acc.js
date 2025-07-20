@@ -60,7 +60,7 @@ function calc() {
     result += '\n单曲';
     for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
       let acc = (inputAcc[i] * preNoteNum[i] - inputAcc[i - 1] * preNoteNum[i - 1]) / noteNum[i];
-      result += ` ${acc.toFixed(3)}`;
+      result += ` ${acc.toFixed(2)}`;
     }
   } else { // 由单曲 ACC 推算段位 ACC 变化
     result = "单曲";
@@ -71,7 +71,7 @@ function calc() {
     let sum = inputAcc[1] * noteNum[1];
     for (let i = 2; i <= DAN_DATA[danChoice].num; i++) {
       sum += inputAcc[i] * noteNum[i];
-      result += `-${(sum / preNoteNum[i]).toFixed(3)}`;
+      result += `-${(sum / preNoteNum[i]).toFixed(2)}`;
     }
   }
   document.getElementById("result").innerHTML = result;
