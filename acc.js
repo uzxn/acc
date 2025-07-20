@@ -67,7 +67,7 @@ function calc() {
     for (let i = 1; i <= DAN_DATA[danChoice].num; i++) result += ` ${inputAcc[i]}`;
     // 如果数据中有 LN 物量并且选中 Score v2
     if ("lnote" in DAN_DATA[danChoice] && isSV2()) result += ' (Score v2)';
-    result += `\n推算 ${inputAcc[1]}0`;
+    result += `\n推算 ${inputAcc[1]}`;
     let sum = inputAcc[1] * noteNum[1];
     for (let i = 2; i <= DAN_DATA[danChoice].num; i++) {
       sum += inputAcc[i] * noteNum[i];
