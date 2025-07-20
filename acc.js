@@ -33,6 +33,8 @@ function showInput() {
       ? `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌结束时的 ACC">\n`
       : `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌的单曲 ACC">\n`;
   }
+  if ("lnote" in DAN_DATA[danChoice])
+    input += `<br><label><input type="checkbox" name="sv2">启用 osu! 中的 Score v2 Mod</label>`
   input += `<br><button class="btn primary" onclick="calc()">确定并复制结果到剪贴板</button>`;
   document.getElementById("info").innerHTML = info;
   document.getElementById("input").innerHTML = input;
