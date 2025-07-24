@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
   <meta charset="utf-8">
@@ -24,15 +24,13 @@
         fill="currentColor" class="octo-body" />
     </svg>
   </a>
-  <i><b>单曲 ACC 计算器</b>&ensp;<small>2025.07.20 更新</small></i>
+  <i><b>单曲 ACC 计算器</b>&ensp;<small>2025.07.24 更新</small></i>
   <hr>
-  <p>请选择计算方式：</p>
-  <div>
+  <div>请选择计算方式：<br>
     <label><input type="radio" name="function" value="normal" checked>由段位 ACC 变化计算单曲 ACC</label><br>
     <label><input type="radio" name="function" value="deduce">由单曲 ACC 推算段位 ACC 变化</label>
   </div>
-  <p>请选择段位（点击粗体字可展开）或<a href="./custom.html">自定义</a>：</p>
-  <div>
+  <div>请选择段位（点击粗体字可展开）或<a href="./custom.html">自定义</a>：<br>
     <details>
       <summary><b>Malody 4K Dan v2 (v1.5 / v1.75)</b></summary>
       <label><input type="radio" name="dan" value="m2_1">1dan</label>
@@ -225,7 +223,7 @@
       <label><input type="radio" name="dan" value="7ln_s">Stellium</label>
     </details>
   </div>
-  <button class="btn primary" onclick="showInput()">确定并输入 ACC</button>
+  <button type="button" class="btn primary" onclick="showInput()">确定并输入 ACC</button>
   <div id="info"></div>
   <div id="input"></div>
   <textarea id="result" readonly class="card w-100" rows="3" style="resize:none;" placeholder="我是结果框 (`ε´ )"></textarea>
