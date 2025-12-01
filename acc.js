@@ -27,7 +27,7 @@ function showInput() {
   let info = "曲目信息：<br><pre>";
   for (let i = 0; i < DAN_DATA[danChoice].num; i++) info += `\n${DAN_DATA[danChoice].song[i]}`;
   info += "</pre>";
-  let input = "请输入（无需百分号）：<br>";
+  let input = "请输入 ACC（无需百分号）：<br>";
   for (let j = 1; j <= DAN_DATA[danChoice].num; j++) {
     input += getFunctionChoice() == "normal"
       ? `<input class="card" type="text" id="input_${j}" placeholder="第 ${j} 首歌结束时的 ACC">\n`
@@ -35,7 +35,7 @@ function showInput() {
   }
   if ("lnote" in DAN_DATA[danChoice])
     input += `<br><label><input type="checkbox" name="sv2">启用 osu! 中的 Score v2 Mod</label>`
-  input += `<br><button type="button" class="btn primary" onclick="calc()">确定并复制结果到剪贴板</button>`;
+  input += `<br><button type="button" class="btn primary" onclick="calc()">确定并复制结果到剪贴板</button>&ensp;<code id="tip"></code>`;
   document.getElementById("info").innerHTML = info;
   document.getElementById("input").innerHTML = input;
   document.getElementById("result").innerHTML = "";
@@ -75,5 +75,6 @@ function calc() {
     }
   }
   document.getElementById("result").innerHTML = result;
+  document.getElementById("tip").innerHTML = "计算结果已复制 (ゝ∀･)";
   navigator.clipboard.writeText(result);
 }
