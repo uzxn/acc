@@ -1,5 +1,8 @@
 "use strict";
 
+let DAN_DATA = [0];
+fetch('./data.json').then(r => r.json()).then(d => DAN_DATA = d);
+
 function getDanChoice() {
   const choices = document.getElementsByName("dan");
   for (let i = 0; i < choices.length; i++)
