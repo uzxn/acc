@@ -10,8 +10,11 @@ function getDanChoice() {
   return false;
 }
 
-function getFunction() {
-  return document.getElementById("function").value;
+function getFunctionChoice() {
+  let choices = document.getElementsByName("function");
+  for (let i = 0; i < choices.length; i++)
+    if (choices[i].checked == true) return choices[i].value;
+  return false;
 }
 
 function isSV2() {
@@ -29,7 +32,7 @@ function calc() {
     inputAcc[i] = Number(document.getElementById(`input_${i}`).value).toFixed(2);
   }
   let output = "";
-  if (getFunction() == "normal") { // 由段位 ACC 变化计算单曲 ACC
+  if (getFunctionChoice() == "normal") { // 由段位 ACC 变化计算单曲 ACC
     output = `${inputAcc[1]}`;
     for (let i = 2; i <= DAN_DATA[danChoice].num; i++) output += `-${inputAcc[i]}`;
     // 如果数据中有 LN 物量并且选中 Score v2
@@ -78,7 +81,7 @@ function inputACC() {
     input.className = "card";
     input.type = "text";
     input.id = `input_${i}`;
-    input.placeholder = getFunction() == "normal" ? `第 ${i} 首歌结束时的 ACC` : `第 ${i} 首歌的单曲 ACC`;
+    input.placeholder = getFunctionChoice() == "normal" ? `第 ${i} 首歌结束时的 ACC` : `第 ${i} 首歌的单曲 ACC`;
     inputACC.appendChild(input);
     inputACC.appendChild(document.createTextNode("\n"));
   }

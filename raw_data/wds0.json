@@ -1,0 +1,67 @@
+{
+  "wds0_1": {
+    "num": 4,
+    "note": [2100, 2050, 2344, 2236],
+    "song": ["Aliesrite* (Ym1024 feat. lamie*) - Vista", "Zeus vs BKANOTHER - Kingdom Of Souls", "Luze vs Kozato - Andro", "ZUN - marchendreams. (BMS edit)"]
+  },
+  "wds0_2": {
+    "num": 4,
+    "note": [2148, 3246, 2054, 2125],
+    "song": ["MisomyL - 無機質世界に彩を", "かたぎり - Nyan-Nyan Naughty Night", "U-hey Seta feat. madoka＊ & kei_iwata - Aoharu Memorysweeper", "96 & Asaki - お米の美味しい炊き方、そしてお米を食べることによるその効 果"]
+  },
+  "wds0_3": {
+    "num": 4,
+    "note": [2434, 2952, 2735, 2312],
+    "song": ["Y&Co. vs Karin - Sweet Rain", "kanone - Apocalypse Nemesis -Meteor Noise-", "Nego_tiator - 祈雨の菖蒲", "ginkiha - Oriens"]
+  },
+  "wds0_4": {
+    "num": 4,
+    "note": [2229, 2585, 2022, 2552],
+    "song": ["kas_0120 - RAKUGAKI NOTE", "-45 & Ura Yoshikawa - A c i - L (Delay)", "remixed celas - Don't say “lazy” -nrg mix-", "An (Feryquitous) - TearVid"]
+  },
+  "wds0_5": {
+    "num": 5,
+    "note": [2597, 3050, 2453, 2361, 2492],
+    "song": ["keyc - Wondering Fortune", "LeaF - ATHAZA", "69 de 74 - 新たなる決意", "Lamanya - Q33B", "BlackY's BEATFLOOR - 不死蝶 -Flair split line-"]
+  },
+  "wds0_n": {
+    "num": 4,
+    "note": [3134, 2504, 1040, 2398],
+    "song": ["黑瘦的鱼头 & iMoon & Tøm - 云南山道最速伝説", "Laoba & nora2r (ZhengqiWuke Remix) - O.L.G.G.O.L.G", "没有狐臭的张嘉文 - 大 雷 普 寺", "DN - 鸡尾草"]
+  },
+  "wds0_6": {
+    "num": 4,
+    "note": [2581, 3165, 2524, 2513],
+    "song": ["ccgc - satellite", "void feat. Hiroko - world DELAYed of you", "Lucky Vacuum - Daily Lunch Special", "Project-G - Regain"]
+  },
+  "wds0_7": {
+    "num": 4,
+    "note": [2824, 3045, 3280, 3073],
+    "song": ["Ponchi♪ feat. はぁち - Inferno City", "あとぅす feat. つゆり花鈴 - endemize", "SHIKI - Cold Breath", "Raimukun - Avantgarde"]
+  },
+  "wds0_8": {
+    "num": 4,
+    "note": [3407, 3493, 3195, 2087],
+    "song": ["DiA - Chinese Typhoon", "あとぅす feat. 咲良ゆの - Rechronize", "さかみりと - 地獄の業火で焼肉大会！？", "Blue-J - Cynical"]
+  },
+  "wds0_9": {
+    "num": 4,
+    "note": [4444, 2602, 2853, 2411],
+    "song": ["EBIMAYO - BadSecret", "Nada Shizuku - Before Cold Sleep", "うまるつふり - 黒鳶～こくえん～", "Mutsuhkio Lzumi - Snow Goose"]
+  },
+  "wds0_10": {
+    "num": 4,
+    "note": [4099, 3284, 3212, 3200],
+    "song": ["Sakamiya feat. 葵一花 - Innocent warrior", "xi & nora2r - Dreadnought", "wotaku - 涅槃を灯すシャーデンフロイデ", "W - knell-第三楽章-"]
+  },
+  "wds0_j": {
+    "num": 4,
+    "note": [3372, 3940, 2680, 2467],
+    "song": ["P.E. - Endymion (gmtn. remix) [1.05x]", "Frums - gur yvsr (仮) [0.95x]", "onoken - teaser [1.2x]", "Frums - Credits"]
+  },
+  "wds0_f": {
+    "num": 5,
+    "note": [3699, 2966, 5315, 4643, 8438],
+    "song": ["Lime - Stellaria", "Kalse - Laureate Grimoire", "ZUN/arr.みょん/iimode-do/かげきち/ALICE※ - Plastic Mind -狂気の人形師-", "Arkplot - Metro", "うえつ氏 - 天空の城ヴェリエル"]
+  }
+}

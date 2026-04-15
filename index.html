@@ -14,13 +14,12 @@
   <i><b>单曲 ACC 计算器</b>&ensp;<small>2026.03.25 更新</small></i>
   <hr>
   请选择计算方式：
-  <select class="card" id="function">
-    <option value="normal" selected>由段位 ACC 变化计算单曲 ACC</option>
-    <option value="deduce">由单曲 ACC 推算段位 ACC 变化</option>
-  </select>
-  <br>
+  <div>
+    <label><input type="radio" name="function" value="normal" checked>由段位 ACC 变化计算单曲 ACC</label><br>
+    <label><input type="radio" name="function" value="deduce">由单曲 ACC 推算段位 ACC 变化</label>
+  </div>
   请选择段位（点击粗体字可展开）或<a href="./custom.html">自定义</a>：
-  <div class="card">
+  <div>
     <details>
       <summary><b>Malody 4K Dan v2 (v1.5 / v1.75)</b></summary>
       <label><input type="radio" name="dan" value="m2_1">1dan</label>
