@@ -1,110 +1,76 @@
 "use strict";
 
-let DAN_DATA = [0];
-fetch('./data.json').then(r => r.json()).then(d => DAN_DATA = d);
+var DAN_DATA = [0];
+fetch('https://uzxn.github.io/acc/data.json')
+  .then(function (r) { return r.json(); })
+  .then(function (d) { DAN_DATA = d; });
 
-function getDanChoice() {
-  const choices = document.getElementsByName("dan");
-  for (let i = 0; i < choices.length; i++)
-    if (choices[i].checked == true) return choices[i].value;
-  return false;
-}
-
-function getFunctionChoice() {
-  let choices = document.getElementsByName("function");
-  for (let i = 0; i < choices.length; i++)
-    if (choices[i].checked == true) return choices[i].value;
-  return false;
-}
-
-function isSV2() {
-  return document.getElementsByName("sv2")[0].checked;
+function getChecked(name) {
+  var radio = document.getElementsByName(name);
+  for (var i = 0; i < radio.length; i++) {
+    if (radio[i].checked) return radio[i].value;
+  }
+  return null;
 }
 
 function calc() {
-  let danChoice = getDanChoice(), noteNum = [0], inputAcc = [0], preNoteNum = [0]; // 物量的前缀和
-  for (let i = 1; i <= DAN_DATA[danChoice].num; i++) noteNum[i] = DAN_DATA[danChoice].note[i - 1];
-  // 如果数据中有 LN 物量并且选中 Score v2
-  if ("lnote" in DAN_DATA[danChoice] && isSV2())
-    for (let i = 1; i <= DAN_DATA[danChoice].num; i++) noteNum[i] += DAN_DATA[danChoice].lnote[i - 1];
-  for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
-    preNoteNum[i] = preNoteNum[i - 1] + noteNum[i];
-    inputAcc[i] = Number(document.getElementById(`input_${i}`).value).toFixed(2);
+  var dan = DAN_DATA[getChecked('dan')];
+  if (!dan) return;
+  var mode = getChecked('function');
+  var sv2 = document.getElementsByName('sv2')[0]
+    && document.getElementsByName('sv2')[0].checked && dan.lnote;
+  // 物量, 物量前缀和, 输入 ACC
+  var note = [0], pre = [0], acc = [0];
+  for (var i = 1; i <= dan.num; i++) {
+    note[i] = dan.note[i - 1];
+    if (sv2) note[i] += dan.lnote[i - 1];
+    pre[i] = pre[i - 1] + note[i];
+    acc[i] = Number(document.getElementById('input_' + i).value).toFixed(2);
   }
-  let output = "";
-  if (getFunctionChoice() == "normal") { // 由段位 ACC 变化计算单曲 ACC
-    output = `${inputAcc[1]}`;
-    for (let i = 2; i <= DAN_DATA[danChoice].num; i++) output += `-${inputAcc[i]}`;
-    // 如果数据中有 LN 物量并且选中 Score v2
-    if ("lnote" in DAN_DATA[danChoice] && isSV2()) output += ' (Score v2)';
-    output += '\n单曲';
-    for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
-      let acc = (inputAcc[i] * preNoteNum[i] - inputAcc[i - 1] * preNoteNum[i - 1]) / noteNum[i];
-      output += ` ${acc.toFixed(2)}`;
+  var out = '';
+  if (mode === 'normal') {
+    out = acc.slice(1).join('-');
+    if (sv2) out += ' (Score v2)';
+    out += '\n单曲';
+    for (var i = 1; i <= dan.num; i++) {
+      var single = (acc[i] * pre[i] - acc[i - 1] * pre[i - 1]) / note[i];
+      out += ' ' + single.toFixed(2);
     }
-  } else { // 由单曲 ACC 推算段位 ACC 变化
-    output = "单曲";
-    for (let i = 1; i <= DAN_DATA[danChoice].num; i++) output += ` ${inputAcc[i]}`;
-    // 如果数据中有 LN 物量并且选中 Score v2
-    if ("lnote" in DAN_DATA[danChoice] && isSV2()) output += ' (Score v2)';
-    output += `\n推算 ${inputAcc[1]}`;
-    let sum = inputAcc[1] * noteNum[1];
-    for (let i = 2; i <= DAN_DATA[danChoice].num; i++) {
-      sum += inputAcc[i] * noteNum[i];
-      output += `-${(sum / preNoteNum[i]).toFixed(2)}`;
+  } else {
+    out = '单曲 ' + acc.slice(1).join(' ');
+    if (sv2) out += ' (Score v2)';
+    out += '\n推算';
+    for (var i = 1, sum = 0; i <= dan.num; i++) {
+      sum += acc[i] * note[i];
+      out += (i === 1 ? ' ' : '-') + (sum / pre[i]).toFixed(2);
     }
   }
-  document.getElementById("output").innerHTML = output;
-  document.getElementById("tip").innerHTML = "计算结果已复制 (ゝ∀･)";
-  navigator.clipboard.writeText(output);
+  document.getElementById('output').innerHTML = out;
+  document.getElementById('tip').innerHTML = '计算结果已复制 (ゝ∀･)';
+  navigator.clipboard.writeText(out);
 }
 
 function inputACC() {
-  let danChoice = getDanChoice();
-  if (danChoice === false || !(danChoice in DAN_DATA)) {
-    document.getElementById("songInfo").innerHTML = "";
-    document.getElementById("inputACC").innerHTML = "";
-    document.getElementById("output").innerHTML = "还未选择任何段位！( `д´)9 / 该段位暂无数据！ (`ε´ )";
+  var dan = DAN_DATA[getChecked('dan')];
+  if (!dan) {
+    document.getElementById('songInfo').innerHTML = '';
+    document.getElementById('inputACC').innerHTML = '';
+    document.getElementById('output').innerHTML = '还未选择任何段位！( `д´)9 / 该段位暂无数据！(`ε´ )';
     return;
   }
-  const songInfo = document.getElementById("songInfo");
-  songInfo.innerHTML = "曲目信息：<br>";
-  const pre = document.createElement("pre");
-  for (let i = 0; i < DAN_DATA[danChoice].num; i++) {
-    pre.appendChild(document.createTextNode(`${DAN_DATA[danChoice].song[i]}\n`));
+  var mode = getChecked('function');
+  var html = '曲目信息：<br><pre>' + dan.song.join('\n') + '</pre>';
+  document.getElementById('songInfo').innerHTML = html;
+  html = '请输入 ACC（无需百分号）：<br>';
+  for (var i = 1; i <= dan.num; i++) {
+    var hint = mode === 'normal' ? '第 ' + i + ' 首歌结束时的 ACC' : '第 ' + i + ' 首歌的单曲 ACC';
+    html += '<input class="card" type="text" id="input_' + i + '" placeholder="' + hint + '">\n';
   }
-  songInfo.appendChild(pre);
-  const inputACC = document.getElementById("inputACC");
-  inputACC.innerHTML = "请输入 ACC（无需百分号）：<br>";
-  for (let i = 1; i <= DAN_DATA[danChoice].num; i++) {
-    const input = document.createElement("input");
-    input.className = "card";
-    input.type = "text";
-    input.id = `input_${i}`;
-    input.placeholder = getFunctionChoice() == "normal" ? `第 ${i} 首歌结束时的 ACC` : `第 ${i} 首歌的单曲 ACC`;
-    inputACC.appendChild(input);
-    inputACC.appendChild(document.createTextNode("\n"));
+  html += '<br>';
+  if (dan.lnote) {
+    html += '<div><label><input type="checkbox" name="sv2">启用 osu! 中的 Score v2 Mod</label></div>\n';
   }
-  if ("lnote" in DAN_DATA[danChoice]) {
-    inputACC.appendChild(document.createElement("br"));
-    const label = document.createElement("label"), input = document.createElement("input");
-    input.type = "checkbox";
-    input.name = "sv2";
-    label.appendChild(input);
-    label.appendChild(document.createTextNode("启用 osu! 中的 Score v2 Mod"))
-    inputACC.appendChild(label);
-    inputACC.appendChild(document.createTextNode("\n"));
-  }
-  inputACC.appendChild(document.createElement("br"));
-  const button = document.createElement("button");
-  button.className = "btn primary";
-  button.type = "button";
-  button.onclick = calc;
-  button.textContent = "确定并复制结果到剪贴板";
-  inputACC.appendChild(button);
-  inputACC.appendChild(document.createTextNode("\u2002"));
-  const tip = document.createElement("code");
-  tip.id = 'tip';
-  inputACC.appendChild(tip);
-  document.getElementById("output").innerHTML = "";
+  html += '<button class="btn primary" type="button" onclick="calc()">确定并复制结果到剪贴板</button>&ensp;<code id="tip"></code>';
+  document.getElementById('inputACC').innerHTML = html;
+  document.getElementById('output').innerHTML = '';
 }
