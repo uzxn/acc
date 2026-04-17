@@ -26,7 +26,7 @@
   },
   "sp_6": {
     "num": 4,
-    "note": [1523, 1705, 1722, 2111],
+    "note": [1526, 1705, 1722, 2109],
     "song": ["Hazy Lazy Doll // Judge_angel", "Kimito Bokuhe no Sousouka // KsEhllh", "World execute.(me); // FIONALNAIROBI", "TearVid // aiyimono33"]
   },
   "sp_7": {
@@ -61,7 +61,7 @@
   },
   "sp_e3": {
     "num": 4,
-    "note": [2148, 2932, 2975, 2052],
+    "note": [2149, 2936, 2974, 2026],
     "song": ["Life is PIANO // Black-rose", "Jinsei Easy? // FIONALNAIROBI", "Shoujo Gen Sou ~ Necro Fantasy // Black-rose", "Eligos // KsEhllh"]
   },
   "sp_e4": {
@@ -71,22 +71,22 @@
   },
   "sp_e5": {
     "num": 4,
-    "note": [2715, 2181, 2350, 3748],
+    "note": [2720, 2181, 2350, 3748],
     "song": ["We Could Get More Machinegun Psystyle! // Black-rose vs. apixxx", "8bit Adventurer // Black-rose", "Chocolate Planet // FIONALNAIROBI", "Fallen Symphony // Black-rose"]
   },
   "sp_e6": {
     "num": 4,
-    "note": [2472, 2179, 2573, 2606],
+    "note": [2472, 2179, 2573, 2608],
     "song": ["POLKAMANIA // mqrs", "Unlimited // aiyimono33", "USSEEWA // Black-rose", "True Hero // Black-rose"]
   },
   "sp_e7": {
     "num": 4,
-    "note": [2816, 2516, 2867, 3503],
+    "note": [2816, 2516, 2821, 3503],
     "song": ["Speedrun // Black-rose", "Nacreous Snowmelt // mqrs", "Owari to Hajimari no Oto // Black-rose", "Attractor Dimension // Ctrl_"]
   },
   "sp_e8": {
     "num": 4,
-    "note": [3131, 2211, 2689, 3552],
+    "note": [3179, 2207, 2689, 3548],
     "song": ["Air // Black-rose", "enchanted love // Black-rose vs. FIONALNAIROBI", "Run*2 Run To You!! // FIONALNAIROBI", "Flamewall // Black-rose"]
   },
   "sp_e9": {
@@ -96,7 +96,7 @@
   },
   "sp_ef": {
     "num": 4,
-    "note": [4207, 3352, 3080, 3450],
+    "note": [4207, 3355, 3080, 3450],
     "song": ["Looking for Edge of Ground // Black-rose", "Arche // Black-rose", "Everlasting Message // FIONALNAIROBI", "Heaven's Gateway // Ctrl_"]
   }
 }
