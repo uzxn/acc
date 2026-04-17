@@ -158,5 +158,12 @@
   "wds0_9": {"num": 4, "note": [4444, 2602, 2853, 2411], "song": ["EBIMAYO - BadSecret", "Nada Shizuku - Before Cold Sleep", "うまるつふり - 黒鳶～こくえん～", "Mutsuhkio Lzumi - Snow Goose"]},
   "wds0_10": {"num": 4, "note": [4099, 3284, 3212, 3200], "song": ["Sakamiya feat. 葵一花 - Innocent warrior", "xi & nora2r - Dreadnought", "wotaku - 涅槃を灯すシャーデンフロイデ", "W - knell-第三楽章-"]},
   "wds0_j": {"num": 4, "note": [3372, 3940, 2680, 2467], "song": ["P.E. - Endymion (gmtn. remix) [1.05x]", "Frums - gur yvsr (仮) [0.95x]", "onoken - teaser [1.2x]", "Frums - Credits"]},
-  "wds0_f": {"num": 5, "note": [3699, 2966, 5315, 4643, 8438], "song": ["Lime - Stellaria", "Kalse - Laureate Grimoire", "ZUN/arr.みょん/iimode-do/かげきち/ALICE※ - Plastic Mind -狂気の人形師-", "Arkplot - Metro", "うえつ氏 - 天空の城ヴェリエル"]}
+  "wds0_f": {"num": 5, "note": [3699, 2966, 5315, 4643, 8438], "song": ["Lime - Stellaria", "Kalse - Laureate Grimoire", "ZUN/arr.みょん/iimode-do/かげきち/ALICE※ - Plastic Mind -狂気の人形師-", "Arkplot - Metro", "うえつ氏 - 天空の城ヴェリエル"]},
+  "xfpsb_1": {"num": 4, "note": [1675, 2107, 1569, 2146], "lnote": [1080, 1872, 1413, 1541], "song": ["cosMo@BousouP - Oceanus", "Feryquitous, xi - Orca", "Kurenainagi Tabibito - Otenba Koimusume", "Toyama Mao - Gunjou Infinity"]},
+  "xfpsb_2": {"num": 4, "note": [2046, 1958, 2634, 2217], "lnote": [1618, 1683, 2364, 1835], "song": ["Sound piercer feat. DAZBEE - Hanatachi ni Kibouwo", "YOASOBI - Yoru ni Kakeru", "xi - Akasha", "YOASOBI - Ano Yume o Nazotte"]},
+  "xfpsb_3": {"num": 4, "note": [2568, 1839, 2636, 2235], "lnote": [2187, 1652, 2180, 1950], "song": ["Katagiri - L4.8TS", "Hatsuki Yura - HAMELN", "HIMEHINA - Utakatayo Ikanaide", "Co shu Nie - bullet"]},
+  "xfpsb_4": {"num": 4, "note": [2279, 1761, 2291, 2233], "lnote": [1817, 1222, 1618, 1804], "song": ["Silentroom vs. Frums - Aegleseeker", "Ariabl'eyeS - Unmei no Haguruma", "Camellia feat. Nanahira - finorza", "Camellia feat. Hatsune Miku - Kokoro no Shitsuryou"]},
+  "xfpsb_5": {"num": 4, "note": [2210, 2190, 1943, 2594], "lnote": [2040, 1741, 1721, 2101], "song": ["Diceros Bicornis - ReviveR", "SHK - Identity Part 5", "sak feat. myui - Unleashed World", "Feryquitous feat. Aitsuki Nakuru - Kairikou"]},
+  "xfpsb_6": {"num": 4, "note": [2633, 3043, 2800, 2611], "lnote": [2502, 2448, 2562, 2378], "song": ["Laur - Exitium", "Camellia - Flamewall", "t+pazolite - Ultrasonic Anthem", "Yooh - Decoy"]},
+  "xfpsb_f": {"num": 4, "note": [2708, 2555, 2583, 2954], "lnote": [2437, 2242, 2315, 2427], "song": ["Omoi, Hatsune Miku - Snow Drive", "Silentroom - Shuu no Hazama", "Ayase Eli - Kaku mo Yuubina Hi to Narite", "Camellia - Tojita Sekai"]}
 }
