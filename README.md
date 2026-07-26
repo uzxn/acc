@@ -10,7 +10,10 @@ An accuracy calculator for VSRG dan(段) courses, supporting customization.
 - osu!mania 4K Dan ~ REFORM (DDMythical)
 - osu!mania 4K Dan ~ REFORM ~ Sample (Emik)
 - osu!mania 4K Dan ~ REFORM ~ FINAL (Thaumiel)
-- osu!mania 4K LN Dan Course v2
+- osu!mania 4K Dan ~ REFORM ~ FINAL (Ext.) (CloverWisp)
+- osu!mania 4K Dan: Signicial's Courses
+- osu!mania 4K LN Dan Courses v2
+- xfpsb 4K LN Advanced Dan Course
 - Haku Dan (白段)
 - Senpai Dan v1
 - wds0 Dan
