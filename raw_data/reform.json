@@ -103,5 +103,20 @@
     "num": 4,
     "note": [3889, 3860, 3863, 3837],
     "song": ["Suicidal Angels - Torment Payback", "Laur - Exitium", "S.S.H. - Intersect Thunderbolt Remix", "DJ Myosuke - Collapse of Ego"]
+  },
+  "rffe_th": {
+    "num": 4,
+    "note": [3514, 3822, 3209, 3562],
+    "song": ["Rip Me Apart (Envy Frenchcore Remix) {1.075x} (Cut) [Ena]", "Grinding Of The Teeth {1.35x} [Star Rating]", "Agoniya (Opium Remix) {1.1x} (Edit) [CloverWisp]", "The Fate of-Remix {1.425x} [Blessia]"]
+  },
+  "rffe_i": {
+    "num": 4,
+    "note": [5550, 5726, 5090, 5930],
+    "song": ["SEVEN {1.3x} [Jhown]", "Boogie {1.85x} (Cut) [Evening]", "White Hair Little Swords Girl {1.2x} [CloverWisp]", "loather {1.15x} (Edit) [CloverWisp]"]
+  },
+  "rffe_k": {
+    "num": 4,
+    "note": [5348, 5575, 5507, 5185],
+    "song": ["ENUMA VELIS {1.15x} [-Sandman- / the blue frawog]", "Magus night fever {1.35x} (Cut) [Windoze]", "Viyella's Malice {1.5x} [CloverWisp]", "KOKUSHIMUSOU {1.4x} [[GB]Oceanus]"]
   }
 }

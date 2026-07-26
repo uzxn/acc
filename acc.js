@@ -1,8 +1,7 @@
 "use strict";
 
 var DAN_DATA = [0];
-fetch('https://uzxn.github.io/acc/data.json')
-  .then(function (r) { return r.json(); }).then(function (d) { DAN_DATA = d; });
+fetch('./data.json').then(function (r) { return r.json(); }).then(function (d) { DAN_DATA = d; });
 
 function getChecked(name) {
   var radio = document.getElementsByName(name);
